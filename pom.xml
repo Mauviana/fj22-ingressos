@@ -150,4 +150,11 @@
         </plugins>
     </build>
 
+    <developers>
+	<developer>
+		<name>Mauricio Viana</name>
+		<email>mau_viana@live.com</email>
+	</developer>
+    </developers>
 </project>
+
