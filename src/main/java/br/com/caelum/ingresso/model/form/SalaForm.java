@@ -20,13 +20,13 @@ public class SalaForm {
     private String nome;
     
     @NotNull
-    private BigDecimal preco;
+    private BigDecimal preco = BigDecimal.ZERO;
     
     private List<Lugar> lugares = new ArrayList<>();
 
     public SalaForm() {
     }
-
+    
     public SalaForm(Sala sala) {
         this.salaId = sala.getId();
         this.nome = sala.getNome();

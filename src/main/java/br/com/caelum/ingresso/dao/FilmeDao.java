@@ -22,6 +22,8 @@ public class FilmeDao {
     }
 
     public void save(Filme filme) {
+    	System.out.println(filme);
+    	
         manager.persist(filme);
     }
 

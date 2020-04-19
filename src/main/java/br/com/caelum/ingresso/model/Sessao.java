@@ -43,7 +43,7 @@ public class Sessao {
 
 	public Sessao(LocalTime horario, Filme filme, Sala sala) {
 		this.horario = horario;
-		this.setFilme(filme);
+		this.filme = filme;
 		this.sala = sala;
 		this.preco = filme.getPreco().add(sala.getPreco());
 	}

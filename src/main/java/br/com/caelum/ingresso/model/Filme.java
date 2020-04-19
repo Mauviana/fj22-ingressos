@@ -70,14 +70,10 @@ public class Filme {
     }
 
 	public BigDecimal getPreco() {
-		return preco;
+		return preco.setScale(2, RoundingMode.HALF_UP);
 	}
 
 	public void setPreco(BigDecimal preco) {
-		this.preco = preco.setScale(2, RoundingMode.HALF_UP);
-	}
-
-	public void setDuracao(Duration duracao) {
-		this.duracao = duracao;
+		this.preco = preco;
 	}
 }

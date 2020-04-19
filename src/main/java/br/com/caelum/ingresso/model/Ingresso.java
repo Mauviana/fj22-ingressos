@@ -80,7 +80,5 @@ public class Ingresso {
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
-	
-	
 
 }
