@@ -1,3 +1,3 @@
-Olá, sou Maurico análista de sistemas
+Olá, sou Mauricio Viana.
 
-Estou no exercicio 2.2, criando minha primeira branch.
+Uso fj22-ingresso como estudo.
