@@ -1,5 +1,7 @@
 package br.com.caelum.ingresso.dao;
 
+import java.util.Optional;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,5 +16,13 @@ public class TokenDao {
 
 	public void save(Token token) {
 		manager.persist(token);
+	}
+
+	public Optional<Token> findByUuid(String uuid) {
+		return manager.createQuery("select t from Token t where t.uuid = :uuid", Token.class)
+				.setParameter("uuid", uuid)
+					.getResultList()
+						.stream()
+							.findFirst();
 	}
 }
