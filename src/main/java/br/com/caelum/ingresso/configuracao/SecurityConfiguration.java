@@ -24,10 +24,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/compra/**")
-				.hasRole("COMPRADOR").antMatchers("/filme/**").permitAll().antMatchers("/sessao/**/lugares").permitAll()
-				.antMatchers("/magic/**").permitAll().antMatchers("/").permitAll().anyRequest().authenticated().and()
-				.formLogin().usernameParameter("email").loginPage("/login").permitAll().and().logout()
+		http.csrf().disable().authorizeRequests()
+			.antMatchers("/admin/**").hasRole("ADMIN")
+			.antMatchers("/compra/**").hasRole("COMPRADOR")
+			.antMatchers("/usuario/**").permitAll()
+			.antMatchers("/filme/**").permitAll()
+			.antMatchers("/sessao/**/lugares").permitAll()
+			.antMatchers("/magic/**").permitAll()
+			.antMatchers("/").permitAll()
+			.anyRequest()
+		.authenticated().and()
+			.formLogin()
+				.usernameParameter("email")
+				.loginPage("/login").permitAll()
+			.and()
+				.logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll();
 	}
 
